@@ -179,7 +179,7 @@ header .navForMob .middle ul {
   text-align: center;
 }
 header .navForMob .middle ul a li {
-  color: #fff700;
+  color: var(--subcolor-babyblue);
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 20px;
@@ -202,7 +202,7 @@ header .navForMob .bottom .i {
   overflow: hidden;
   border-radius: 50%;
   height: 40px;
-  color: #fff700;
+  color: var(--subcolor-babyblue);
   background-color: transparent;
   box-shadow: 5px 5px 10px 0px rgba(0, 152, 255, 0.4196078431);
 }
@@ -242,7 +242,7 @@ header .navForMob .bottom .i svg {
 
 .star6 {
   animation: 2.5s linear 1s infinite alternate twinkle;
-  background-color: rgba(255, 255, 0, 0.95);
+  background-color: var(--subcolor-babyblue);
 }
 
 @keyframes twinkle {

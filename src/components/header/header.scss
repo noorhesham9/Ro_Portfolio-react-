@@ -212,7 +212,7 @@ header {
         text-align: center;
         a {
           li {
-            color: #fff700;
+            color: var(--subcolor-babyblue);
             font-size: 25px;
             font-weight: 500;
             margin-bottom: 20px;
@@ -239,7 +239,7 @@ header {
         overflow: hidden;
         border-radius: 50%;
         height: 40px;
-        color: #fff700;
+        color: var(--subcolor-babyblue);
         background-color: transparent;
         box-shadow: 5px 5px 10px 0px #0098ff6b;
         svg {
@@ -282,7 +282,7 @@ header {
 
 .star6 {
   animation: 2.5s linear 1s infinite alternate twinkle;
-  background-color: rgba(255, 255, 0, 0.95);
+  background-color: var(--subcolor-babyblue);
 }
 
 @keyframes twinkle {

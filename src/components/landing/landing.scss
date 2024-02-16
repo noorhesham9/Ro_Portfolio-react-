@@ -1,50 +1,20 @@
 .landing {
+  background-image: url("../../assets/landingBackground.png");
+
+  background-position: center;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
   .content {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-  background-image: url(../../assets/landingBackground.png);
 
-  .image {
-    width: 400px;
-    position: relative;
-    max-width: 100%;
-    z-index: 90;
-    overflow: hidden;
-    padding: 20px 20px 0px 20px;
-    border: 1px solid #001124;
-    background-image: url(../image/pexels-rodrigo-souza-2531709.jpg);
-    -webkit-box-shadow: 2px 2px #001124;
-    box-shadow: 0px 0px 10px 6px #001124;
-    border-radius: 6px;
-    &::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: rgba(0, 0, 0);
-      border-radius: 6px;
-    }
-
-    border-radius: 6px;
-    img {
-      max-width: 100%;
-      border-radius: 6px;
-      position: relative;
-      z-index: 100;
-    }
-  }
   .text {
     display: flex;
     flex-direction: column;
@@ -52,9 +22,8 @@
       &:first-child {
         font-size: 25px;
         color: #ffffff;
-
         margin-bottom: 8px;
-        font-family: acumin-pro;
+        font-family: var(--SecondFont);
         font-weight: 500;
         letter-spacing: 2px;
         margin-left: 10px;
@@ -64,7 +33,7 @@
           font-size: 70px;
           font-weight: 700;
           color: #ffffff;
-          font-family: acumin-pro;
+          font-family: var(--SecondFont);
           margin-bottom: 8px;
           letter-spacing: 3px;
           margin-left: 0;
@@ -72,7 +41,7 @@
         font-size: 70px;
         font-weight: 700;
         color: #ffffff;
-        font-family: acumin-pro;
+        font-family: var(--SecondFont);
         margin-bottom: 8px;
         letter-spacing: 3px;
       }
@@ -80,19 +49,23 @@
         font-size: 20px;
         color: #ffffff;
         margin-bottom: 8px;
-        font-family: acumin-pro;
+        font-family: var(--SecondFont);
         letter-spacing: 2px;
         margin-top: 5px;
       }
+      .Ima {
+        margin-right: 10px;
+      }
       .graphic {
-        font-size: 21px;
-        font-weight: 500;
+        font-size: 35px;
+        font-weight: 600;
         margin-bottom: 8px;
-        font-family: acumin-pro;
+        font-family: var(--ThirdFont);
         letter-spacing: 2px;
         margin-top: 5px;
         display: inline-block;
-        color: #ffffff;
+        color: var(--subcolor-babyblue);
+        // color: #d66bc6;
       }
     }
     a {
@@ -112,7 +85,7 @@
         color: #001124;
         font-size: 25px;
 
-        font-family: acumin-pro;
+        font-family: var(--buttonFont);
         font-weight: 500;
 
         letter-spacing: 2px;
@@ -143,6 +116,24 @@
     }
     width: fit-content;
   }
+
+  //   .image {
+  //     position: relative;
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     width: 400px;
+  //     height: 400px;
+  //     position: relative;
+  //     max-width: 100%;
+  //     z-index: 90;
+  //     padding: 20px 20px 20px 20px;
+
+  //     background-position: center;
+  //     background-size: cover;
+  //     border-radius: 6px;
+  //     border-radius: 6px;
+  //   }
 }
 @media (max-width: 991px) {
   .landing {
@@ -193,7 +184,7 @@
       }
       a {
         margin-top: 15px;
-
+        font-family: "MyFont";
         margin-left: 0;
       }
     }
@@ -233,19 +224,19 @@
           font-size: 16px;
           color: #ffffff;
           margin-bottom: 8px;
-          font-family: acumin-pro;
+          font-family: var(--SecondFont);
           letter-spacing: 2px;
           margin-top: 5px;
         }
         .graphic {
-          font-size: 20px;
-          font-weight: 500;
+          font-size: 25px;
+          font-weight: 600;
           margin-bottom: 8px;
-          font-family: acumin-pro;
+          font-family: var(--SecondFont);
           letter-spacing: 2px;
           margin-top: 5px;
           display: inline-block;
-          color: #ffffff;
+          color: var(--subcolor-babyblue);
         }
       }
     }

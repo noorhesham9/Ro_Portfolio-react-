@@ -5,16 +5,26 @@
   padding: 0;
   margin: 0;
 }
+@font-face {
+  font-family: "MyFont";
+  src: url("./assets/SpaceGames-K7zKD.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --cubeWidth: 240px;
   --cubeHeight: 240px;
   --white: white;
   --black: black;
-  --subcolor-orange: #cf9c63;
+  --subcolor-babyblue: #00c3ff;
   --subcolor-balck: #232222;
-  /* // font-family: "Great Vibes", cursive;   second font */
+
+  /* // font-family: ;   second font */
   --SecondFont: "Dancing Script", cursive;
+  --ThirdFont: "Great Vibes", cursive;
+  --buttonFont: "MyFont", cursive;
+  --subtitlefont: "Poppins", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -84,10 +94,9 @@ section .mainhead {
 section .mainhead h2 {
   display: inline-block;
   position: relative;
-  color: #fff;
-  letter-spacing: 1.5px;
+  color: white;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 50px;
   font-family: "Caveat", cursive;
 }

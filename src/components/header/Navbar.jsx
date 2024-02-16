@@ -167,7 +167,7 @@ function Header() {
             >
               <CloseIcon
                 sx={{
-                  color: " #fff700",
+                  color: "var(--subcolor-babyblue)",
                   fontSize: "40px",
                 }}
               />
