@@ -3,8 +3,8 @@ import "./App.css";
 // import Header from "./components/header/header";
 import Header from "./components/header/Navbar";
 import Landing from "./components/landing/Landing";
-import About from "./components/about/About";
-import Services from "./components/services/Services";
+import About from "./components/about/about";
+import Services from "./components/services/services";
 function App() {
   return (
     <div>
