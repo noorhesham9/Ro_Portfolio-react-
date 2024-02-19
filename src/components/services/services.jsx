@@ -6,7 +6,9 @@ import { Pagination } from "swiper/modules";
 import services1 from "../../assets/services1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlassPlus } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlassMinus } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 const servicesdata = [
   {
     id: "1",
@@ -60,6 +62,35 @@ const servicesdata = [
 ];
 
 function Services() {
+  const [iSClicked, setISclicked] = useState([]);
+  const [TimeOutID, setTimeOutID] = useState(null);
+  // const [button1 , setButton1] = useState()
+
+  function timeOut(id) {
+    console.log(iSClicked);
+    // console.log(`${id}`);
+    // console.log(iSClicked.includes(id));
+    if (iSClicked.includes(`"${id}"`)) {
+      console.log("include");
+      let n = setTimeout(() => {
+        removeValue(n.id);
+      }, 5000);
+      setTimeOutID(n);
+    } else {
+      console.log("else");
+      clearTimeout(TimeOutID);
+    }
+  }
+  function removeValue(value) {
+    const arr = iSClicked;
+    const indexToRemove = iSClicked.indexOf(value);
+    const result = [
+      ...arr.slice(0, indexToRemove),
+      ...arr.slice(indexToRemove + 1),
+    ];
+    console.log(result);
+    setISclicked(result);
+  }
   return (
     <section id="services" className="services graaay">
       <div className="mainhead">
@@ -89,22 +120,8 @@ function Services() {
               },
             }}
           >
-            {servicesdata.map((n, index) => {
+            {servicesdata.map((n) => {
               return (
-                // <SwiperSlide key={n.id}>
-                //   <div>{n.title}</div>
-                //   <div> {n.subtitle}</div>
-                //   <div>{n.description}</div>
-                //   <img
-                //     style={{
-                //       width: "100px",
-                //       height: "100px",
-                //     }}
-                //     src={n.image}
-                //     alt=""
-                //   />
-                // </SwiperSlide>
-
                 <SwiperSlide
                   key={n.id}
                   className="services__item card card-one"
@@ -123,7 +140,34 @@ function Services() {
                       icon={faArrowCircleRight}
                     />
                   </a>
-                  <img src={n.image} alt="" />
+                  <div
+                    className={`image ${
+                      iSClicked.includes(n.id) ? "clicked" : ""
+                    } `}
+                  >
+                    <img src={n.image} alt="" />
+                    <div
+                      className="overlayPlus"
+                      onClick={() => {
+                        if (iSClicked.includes(n.id)) {
+                          console.log("includes");
+                          removeValue(n.id);
+                        } else {
+                          setISclicked([...iSClicked, n.id]);
+                        }
+                      }}
+                    >
+                      {iSClicked.includes(n.id) ? (
+                        <FontAwesomeIcon
+                          icon={faMagnifyingGlassMinus}
+                        ></FontAwesomeIcon>
+                      ) : (
+                        <FontAwesomeIcon
+                          icon={faMagnifyingGlassPlus}
+                        ></FontAwesomeIcon>
+                      )}
+                    </div>
+                  </div>
                 </SwiperSlide>
               );
             })}
