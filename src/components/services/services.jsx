@@ -64,23 +64,22 @@ const servicesdata = [
 function Services() {
   const [iSClicked, setISclicked] = useState([]);
   const [TimeOutID, setTimeOutID] = useState(null);
-  // const [button1 , setButton1] = useState()
+  const [buttonID, setButtonID] = useState("");
 
   function timeOut(id) {
-    console.log(iSClicked);
-    // console.log(`${id}`);
-    // console.log(iSClicked.includes(id));
-    if (iSClicked.includes(`"${id}"`)) {
-      console.log("include");
+    if (iSClicked.includes(`${id}`)) {
       let n = setTimeout(() => {
-        removeValue(n.id);
+        removeValue(id);
       }, 5000);
       setTimeOutID(n);
     } else {
-      console.log("else");
       clearTimeout(TimeOutID);
     }
   }
+
+  useEffect(() => {
+    timeOut(buttonID);
+  }, [iSClicked]);
   function removeValue(value) {
     const arr = iSClicked;
     const indexToRemove = iSClicked.indexOf(value);
@@ -88,7 +87,6 @@ function Services() {
       ...arr.slice(0, indexToRemove),
       ...arr.slice(indexToRemove + 1),
     ];
-    console.log(result);
     setISclicked(result);
   }
   return (
@@ -97,7 +95,7 @@ function Services() {
         <h2>services</h2>
       </div>
       <div className="container">
-        <div className="content">
+        <div className="contentt">
           <Swiper
             slidesPerView={1}
             spaceBetween={10}
@@ -108,15 +106,15 @@ function Services() {
             breakpoints={{
               540: {
                 slidesPerView: 1,
-                spaceBetween: 30,
+                spaceBetween: 20,
               },
               768: {
                 slidesPerView: 2,
-                spaceBetween: 30,
+                spaceBetween: 20,
               },
               1200: {
                 slidesPerView: 3,
-                spaceBetween: 40,
+                spaceBetween: 20,
               },
             }}
           >
@@ -150,10 +148,11 @@ function Services() {
                       className="overlayPlus"
                       onClick={() => {
                         if (iSClicked.includes(n.id)) {
-                          console.log("includes");
                           removeValue(n.id);
+                          setButtonID(n.id);
                         } else {
                           setISclicked([...iSClicked, n.id]);
+                          setButtonID(n.id);
                         }
                       }}
                     >

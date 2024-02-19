@@ -1,16 +1,13 @@
 .services {
-  // position: relative;
-  // display: block;
-  // &::before {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   content: "";
-  //   width: 100%;
-  //   height: 100%;
-  //   background-color: rgba(0, 0, 0, 0.5);
+  @media (max-width: 767px) {
+    .container {
+      max-width: 400px;
+    }
+  }
+  // .container {
+  //   max-width: 400px;
   // }
-  .content {
+  .contentt {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -20,6 +17,8 @@
   .swiper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .services__subtitle {
     color: var(--subcolor-babyblue);
@@ -45,6 +44,17 @@
     // letter-spacing: 1px;
     font-size: 13px;
   }
+  @media (max-width: 330px) {
+    .services__description {
+      min-height: 220px !important;
+    }
+    .link {
+      gap: 5px !important;
+      &:hover {
+        gap: 5px !important;
+      }
+    }
+  }
 
   .swiper-wrapper {
     margin-bottom: 10px;
@@ -62,6 +72,11 @@
   }
   .swiper-slide {
     position: relative;
+  }
+  @media (max-width: 767px) {
+    .card-one {
+      padding: 10px 15px;
+    }
   }
 
   .image {
@@ -85,6 +100,15 @@
       height: 100%;
       bottom: 0;
       right: 0;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+      }
     }
     .overlayPlus {
       position: absolute;
@@ -111,6 +135,21 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .overlayPlus {
+      background-color: rgba(0, 0, 0, 0.3) !important;
+      opacity: 1 !important;
+      svg {
+        width: 18px !important;
+        height: 18px !important;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        animation: servicesAnimaiton 2s linear 0s infinite;
+      }
+    }
+  }
+
   .link {
     font-family: var(--SecondFont);
     color: var(--subcolor-babyblue);
@@ -128,43 +167,55 @@
   }
 }
 
-// .swiper-horizontal > .swiper-pagination-bullets {
-//   width: auto !important;
-//   display: inline-flex;
-//   position: relative;
-//   height: 26px;
-//   justify-content: center;
-//   align-items: center;
-// }
-// .swiper-horizontal > .swiper-pagination-bullets::before {
-//   content: "";
-//   height: 2px;
-//   right: 0;
-//   position: absolute;
-//   width: 100%;
-//   background-color: white;
-// }
+@keyframes servicesAnimaiton {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.swiper-horizontal > .swiper-pagination-bullets {
+  width: fit-content;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 
-// .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
-//   border: 2px solid white;
-//   background-color: red;
-//   z-index: 2;
-//   position: relative;
-//   opacity: 1;
-//   margin: 0px;
-//   transition: all 0.2s var(--transition);
-// }
+.swiper-horizontal > .swiper-pagination-bullets::before {
+  content: "";
+  height: 2px;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+}
 
-// .swiper-horizontal
-//   > .swiper-pagination-bullets
-//   .swiper-pagination-bullet:not(:last-child) {
-//   margin-right: 20px;
-// }
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  border: 2px solid white;
+  background-color: rgb(1, 0, 63);
+  z-index: 2;
+  position: relative;
+  opacity: 1;
+  margin: 0px;
+  transition: all 0.3s;
+  width: 10px;
+  height: 10px;
+}
 
-// .swiper-horizontal
-//   > .swiper-pagination-bullets
-//   .swiper-pagination-bullet-active {
-//   background-color: blue;
-//   width: 13px;
-//   height: 13px;
-// }
+.swiper-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet:not(:last-child) {
+  margin-right: 10px;
+}
+
+.swiper-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet-active {
+  background-color: var(--subcolor-babyblue);
+  width: 13px;
+  height: 13px;
+}

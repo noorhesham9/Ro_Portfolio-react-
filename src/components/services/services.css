@@ -1,4 +1,9 @@
-.services .content {
+@media (max-width: 767px) {
+  .services .container {
+    max-width: 400px;
+  }
+}
+.services .contentt {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -7,6 +12,8 @@
 .services .swiper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .services .services__subtitle {
   color: var(--subcolor-babyblue);
@@ -29,6 +36,17 @@
   font-family: var(--subtitlefont);
   font-size: 13px;
 }
+@media (max-width: 330px) {
+  .services .services__description {
+    min-height: 220px !important;
+  }
+  .services .link {
+    gap: 5px !important;
+  }
+  .services .link:hover {
+    gap: 5px !important;
+  }
+}
 .services .swiper-wrapper {
   margin-bottom: 10px;
 }
@@ -44,6 +62,11 @@
 }
 .services .swiper-slide {
   position: relative;
+}
+@media (max-width: 767px) {
+  .services .card-one {
+    padding: 10px 15px;
+  }
 }
 .services .image {
   position: absolute;
@@ -66,6 +89,15 @@
   height: 100%;
   bottom: 0;
   right: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.services .image.clicked img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
 }
 .services .image .overlayPlus {
   position: absolute;
@@ -90,6 +122,20 @@
   cursor: pointer;
   opacity: 1;
 }
+@media (max-width: 768px) {
+  .services .overlayPlus {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    opacity: 1 !important;
+  }
+  .services .overlayPlus svg {
+    width: 18px !important;
+    height: 18px !important;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    animation: servicesAnimaiton 2s linear 0s infinite;
+  }
+}
 .services .link {
   font-family: var(--SecondFont);
   color: var(--subcolor-babyblue);
@@ -104,4 +150,54 @@
 }
 .services .link:hover {
   gap: 8px;
+}
+
+@keyframes servicesAnimaiton {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.swiper-horizontal > .swiper-pagination-bullets {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets::before {
+  content: "";
+  height: 2px;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  border: 2px solid white;
+  background-color: rgb(1, 0, 63);
+  z-index: 2;
+  position: relative;
+  opacity: 1;
+  margin: 0px;
+  transition: all 0.3s;
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:not(:last-child) {
+  margin-right: 10px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet-active {
+  background-color: var(--subcolor-babyblue);
+  width: 13px;
+  height: 13px;
 }/*# sourceMappingURL=services.css.map */
