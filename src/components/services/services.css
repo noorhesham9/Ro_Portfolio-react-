@@ -78,7 +78,7 @@
   width: 100px;
   height: 100px;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 1s;
 }
 .services .image img {
   width: 100%;

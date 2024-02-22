@@ -60,34 +60,42 @@ const servicesdata = [
     button: "",
   },
 ];
-
 function Services() {
-  const [iSClicked, setISclicked] = useState([]);
-  const [TimeOutID, setTimeOutID] = useState(null);
+  const [iSClicked, setISclicked] = useState("");
+  const [TimeOutIDs, setTimeOutIDs] = useState([]);
   const [buttonID, setButtonID] = useState("");
 
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+
   function timeOut(id) {
-    if (iSClicked.includes(`${id}`)) {
-      let n = setTimeout(() => {
+    // if (iSClicked == `${id}`) {
+    let n = setTimeout(() => {
+      if (iSClicked == `${id}`) {
         removeValue(id);
-      }, 5000);
-      setTimeOutID(n);
-    } else {
-      clearTimeout(TimeOutID);
-    }
+      }
+    }, 4000);
+
+    setTimeOutIDs([...TimeOutIDs, n]);
+    // }
   }
 
   useEffect(() => {
     timeOut(buttonID);
-  }, [iSClicked]);
+    TimeOutIDs.forEach((element) => {
+      clearTimeout(element);
+    });
+  }, [buttonID]);
+
   function removeValue(value) {
-    const arr = iSClicked;
-    const indexToRemove = iSClicked.indexOf(value);
-    const result = [
-      ...arr.slice(0, indexToRemove),
-      ...arr.slice(indexToRemove + 1),
-    ];
-    setISclicked(result);
+    setISclicked("");
+    setButtonID("");
   }
   return (
     <section id="services" className="services graaay">
@@ -129,7 +137,6 @@ function Services() {
                   <p className="services__description">{n.description}</p>
                   <a href="" className="link">
                     contact me
-                    {/* <FaArrowRight className="link__icon" /> */}
                     <FontAwesomeIcon
                       style={{
                         position: "relative",
@@ -139,24 +146,23 @@ function Services() {
                     />
                   </a>
                   <div
-                    className={`image ${
-                      iSClicked.includes(n.id) ? "clicked" : ""
-                    } `}
+                    className={`image ${iSClicked == n.id ? "clicked" : ""} `}
                   >
                     <img src={n.image} alt="" />
                     <div
                       className="overlayPlus"
                       onClick={() => {
-                        if (iSClicked.includes(n.id)) {
+                        if (iSClicked == n.id) {
                           removeValue(n.id);
                           setButtonID(n.id);
                         } else {
-                          setISclicked([...iSClicked, n.id]);
+                          setISclicked(n.id);
                           setButtonID(n.id);
+                          // handlePress(n.id);
                         }
                       }}
                     >
-                      {iSClicked.includes(n.id) ? (
+                      {iSClicked == n.id ? (
                         <FontAwesomeIcon
                           icon={faMagnifyingGlassMinus}
                         ></FontAwesomeIcon>
@@ -178,40 +184,3 @@ function Services() {
 }
 
 export default Services;
-
-{
-  /* <div className="logo box">
-            <div className="childImage">
-              <img src="image/logoDesign cutted.png" alt="" />
-            </div>
-            <div className="title">Logo Design</div>
-          </div>
-     
-          <div className="Illustrations box">
-            <div className="childImage">
-              <img src="image/night crop.png" alt="" />
-            </div>
-            <div className="title">Illustrations</div>
-          </div>
-          <div className="decore box">
-            <div className="childImage">
-              <img src="image/fotor_2023-1-23_19_26_3.png" alt="" />
-            </div>
-            <div className="title">Decore</div>
-          </div>
-          <div className="branding box">
-            <div className="childImage">
-              <img
-                src="image/WhatsApp Image 2021-10-23 at 1.00.57 AM.jpeg"
-                alt=""
-              />
-            </div>
-            <div className="title">Branding</div>
-          </div>
-          <div className="courses box">
-            <div className="childImage">
-              <img src="image/fotor_2023-1-23_19_27_28.png" alt="" />
-            </div>
-            <div className="title">Courses</div>
-          </div> */
-}
