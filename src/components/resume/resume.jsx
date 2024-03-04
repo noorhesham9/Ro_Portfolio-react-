@@ -3,7 +3,7 @@ import { cv } from "../../data/Data";
 import Card from "./card";
 function Resume() {
   return (
-    <section id="resume" className="resume graaay">
+    <section id="resume" className="resume gray">
       <div className="mainhead">
         <h2>resume</h2>
       </div>

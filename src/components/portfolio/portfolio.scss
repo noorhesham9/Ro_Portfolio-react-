@@ -1,0 +1,130 @@
+.portfolio__img-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid var(--subcolor-babyblue);
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    opacity: 0.3;
+    z-index: 1;
+    transition: all 0.6s;
+    background-color: var(--subcolor-babyblue);
+  }
+}
+.portfolio__img {
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+  transition: all 0.6s cubic-bezier(0.3, 0, 0.3, 1);
+}
+
+.portfolio__items .portfolio__img-wrapper {
+  &:hover {
+    .portfolio__img {
+      height: 330px;
+    }
+    &:before {
+      opacity: 0.2;
+      top: 0;
+    }
+  }
+}
+
+.card {
+  background-color: #232222;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid var(--subcolor-babyblue);
+  padding: 8px;
+}
+.swiper-slide {
+  background-color: transparent;
+  border-radius: 18px;
+}
+.portfolio {
+  //   background-image: var(--first-gradient);
+}
+
+.portfolio__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 15px;
+  column-gap: 40px;
+  margin-bottom: 60px;
+}
+
+.portfolio__list-item {
+  color: hsl(0, 0%, 100%);
+  font-size: 13px;
+  position: relative;
+  transition: all 0.7s cubic-bezier(0.3, 0, 0.3, 1);
+}
+
+.portfolio__list-item.active-work {
+  color: var(--primary-color);
+}
+
+.portfolio__list-item::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  max-width: 60%;
+  background-color: var(--subcolor-babyblue);
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  transition: all 0.3s cubic-bezier(0.3, 0, 0.3, 1);
+}
+.portfolio__list-item:hover::before,
+.portfolio__list-item.active-work::before {
+  width: 40px;
+}
+
+.portfolio__category {
+  color: var(--subcolor-babyblue);
+  font-family: var(--SecondFont);
+  font-family: var(--ThirdFont);
+
+  font-size: 25px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+}
+.container {
+  overflow: hidden;
+}
+.portfolio__category,
+.portfolio__description {
+  margin-top: 30px;
+}
+
+.portfolio__title {
+  font-size: 19px;
+  font-weight: 600;
+
+  font-family: var(--SecondFont);
+}
+
+.portfolio__description {
+  //   min-height: 125px;
+  font-family: var(--subtitlefont);
+
+  padding-bottom: 30px;
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: clamp(1.75rem, 1.4167rem + 1.5238vw, 2.75rem);
+}

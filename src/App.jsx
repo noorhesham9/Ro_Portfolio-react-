@@ -6,6 +6,7 @@ import Landing from "./components/landing/Landing";
 import About from "./components/about/about";
 import Services from "./components/services/services";
 import Resume from "./components/resume/resume";
+import Portfolio from "./components/portfolio/portfolio";
 function App() {
   return (
     <div>
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Services />
       <Resume />
+      <Portfolio />
     </div>
   );
 }

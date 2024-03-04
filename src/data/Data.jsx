@@ -1,3 +1,10 @@
+import Project1 from "./../assets/services1.png";
+import Project2 from "./../assets/services2.jpeg";
+import Project3 from "./../assets/services3.png";
+import Project4 from "./../assets/services4.jpeg";
+import Project5 from "./../assets/services5.png";
+import Project6 from "./../assets/services6.png";
+
 export const cv = [
   {
     id: 1,
@@ -57,5 +64,56 @@ export const cv = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     category: "experience",
+  },
+];
+
+export const projects = [
+  {
+    id: 1,
+    img: Project1,
+    category: "Branding",
+    title: "AL-Naira",
+    description:
+      "The Al-Naira Company's logo was meticulously crafted to align with its vision and growth trajectory, ensuring seamless adaptability across all contexts and scenarios.",
+  },
+  {
+    id: 2,
+    img: Project2,
+    category: "ADS",
+    title: "Dunkin Donuts",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus",
+  },
+  {
+    id: 3,
+    img: Project3,
+    category: "Development",
+    title: "Explore",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus",
+  },
+  {
+    id: 4,
+    img: Project4,
+    category: "Photography",
+    title: "Mozar",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus",
+  },
+  {
+    id: 5,
+    img: Project5,
+    category: "Development",
+    title: "Stay Fit",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus",
+  },
+  {
+    id: 6,
+    img: Project6,
+    category: "Branding",
+    title: "Kana",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus",
   },
 ];
