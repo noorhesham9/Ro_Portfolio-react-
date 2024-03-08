@@ -1,13 +1,12 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import * as Yup from "yup";
-import { Button, Stack, Snackbar } from "@mui/material";
+import { Button, Stack, Snackbar, TextField } from "@mui/material";
 import Alert from "@mui/material/Alert";
-import { Form, Formik } from "formik";
+import { Form, Formik, Field, ErrorMessage } from "formik";
 
 function Contact() {
   const [state, handleSubmit] = useForm("xdoqzqoy");
-  console.log(state.errors);
   if (state.succeeded) {
     // return <p>Thanks for joining!</p>;
     console.log("successfully");
@@ -18,12 +17,14 @@ function Contact() {
     subject: "",
     message: "",
   };
-  const validationSchema = {
+  const validationSchema = Yup.object({
     fullName: Yup.string().required("Required !"),
-    email: Yup.string().email("invalid email format"),
+    email: Yup.string()
+      .email("invalid email format")
+      .required("required email"),
     subject: Yup.string().required("Required !"),
     message: Yup.string(),
-  };
+  });
   return (
     <>
       <Formik
@@ -31,20 +32,57 @@ function Contact() {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {() => {
-          return <Form></Form>;
+        {({ errors, touched }) => {
+          console.log(errors);
+          return (
+            <Form>
+              <Field
+                name="fullName"
+                id="fullName"
+                as={TextField}
+                required
+                error={errors.fullName && touched.fullName}
+                label="Full Name"
+              ></Field>
+              <Field
+                name="email"
+                id="email"
+                error={errors.email && touched.email}
+                as={TextField}
+                required
+                label="Email"
+              ></Field>
+              <Field
+                name="subject"
+                id="subject"
+                as={TextField}
+                error={errors.subject && touched.subject}
+                required
+                label="Subject"
+              ></Field>
+              <Field
+                name="message"
+                id="message"
+                as={TextField}
+                error={errors.message && touched.message}
+                required
+                label="Message"
+              ></Field>
+              <button
+                type="submit"
+                disabled={
+                  state.submitting ||
+                  errors.email ||
+                  errors.fullName ||
+                  errors.subject
+                }
+              >
+                submit
+              </button>
+            </Form>
+          );
         }}
       </Formik>
-      <label htmlFor="name">Fullname</label>
-      <input id="name" name="fullName" type="text" />
-      <label htmlFor="email">Email Address</label>
-      <input id="email" type="email" name="email" />
-      <label htmlFor="subject">subject</label>
-      <input id="subject" type="text" name="subject" />
-      <textarea id="message" name="message" />
-      <button type="submit" disabled={state.submitting}>
-        Submit
-      </button>
     </>
   );
 }
