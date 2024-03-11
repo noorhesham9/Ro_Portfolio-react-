@@ -8,6 +8,7 @@ import Services from "./components/services/services";
 import Resume from "./components/resume/resume";
 import Portfolio from "./components/portfolio/portfolio";
 import Contact from "./components/contact/contact";
+import AllContact from "./components/contact/AllContact";
 function App() {
   return (
     <div>
@@ -17,7 +18,7 @@ function App() {
       <Services />
       <Resume />
       <Portfolio />
-      <Contact />
+      <AllContact />
     </div>
   );
 }

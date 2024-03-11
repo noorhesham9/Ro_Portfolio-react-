@@ -1,0 +1,251 @@
+.CONTACT {
+  padding-inline: 20px;
+}
+
+.errMSg {
+  color: red;
+  // display: block;
+  font-family: var(--subtitlefont);
+  margin-inline: 22px !important;
+}
+
+.SendMain {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: fit-content;
+  color: var(--subcolor-babyblue);
+  font-size: 25px !important;
+  font-family: var(--ThirdFont) !important;
+}
+.messageTell {
+  // margin: 20px;
+  margin-top: 7px !important;
+  color: var(--subcolor-babyblue);
+
+  font-size: 23px !important;
+  font-family: var(--ThirdFont) !important;
+  // margin-inline: 22px !important;
+}
+
+.dowload {
+  display: flex;
+  position: relative;
+  border-radius: 6px;
+  border: 2px solid var(--subcolor-babyblue);
+  overflow: hidden;
+  width: fit-content;
+
+  margin-top: 10px;
+
+  background-color: #999999;
+  @media (max-width: 991px) {
+    margin: 10px auto;
+  }
+  &:disabled {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+
+    cursor: alias;
+    a {
+      cursor: default;
+      color: rgba(0, 0, 0, 0.3);
+    }
+    &:hover {
+      a {
+        color: rgba(255, 255, 255, 0.3) !important;
+      }
+    }
+  }
+  a {
+    font-size: 16px;
+    font-family: var(--buttonFont);
+    padding: 8px 15px;
+    font-weight: 500;
+    transition: 0.4s;
+    color: black;
+    z-index: 3;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    transition: 0.4s;
+    left: -100%;
+    height: 100%;
+    background-color: #1a1a1a;
+  }
+  &:hover {
+    a {
+      color: #00c3ff;
+    }
+    &:before {
+      left: 0;
+    }
+  }
+}
+
+.field {
+  width: 100%;
+  margin-top: 10px !important;
+  // margin-inline: 20px !important;
+  .MuiOutlinedInput-notchedOutline {
+    border-color: var(--subcolor-babyblue) !important;
+  }
+
+  .MuiInputBase-input {
+    color: white !important;
+    background-color: transparent;
+  }
+  .MuiFormLabel-root {
+    color: white !important;
+    font-family: var(--SecondFont);
+
+    &.Mui-focused {
+      color: var(--subcolor-babyblue) !important;
+    }
+    &.Mui-error {
+      color: red !important;
+    }
+  }
+
+  .Mui-error {
+    color: red !important;
+    .MuiOutlinedInput-notchedOutline {
+      border-color: red !important;
+    }
+  }
+}
+
+.message {
+  margin-top: 0px !important;
+}
+
+.MAIN {
+  font-size: 40px !important;
+  color: var(--subcolor-babyblue);
+  font-family: var(--ThirdFont) !important;
+}
+.submain {
+  font-size: 25px !important;
+  color: var(--subcolor-babyblue);
+  font-family: var(--SecondFont) !important;
+  // padding-left: px;
+  margin-bottom: 15px !important;
+}
+@media (max-width: 991px) {
+  .MAIN,
+  .submain {
+    text-align: center;
+  }
+}
+
+.boxes {
+  display: flex;
+  gap: 20px;
+  // @media (max-width: 991px) {
+  flex-direction: column !important;
+  // }
+  .box {
+    border: 1px solid var(--subcolor-babyblue);
+    border-radius: 7px;
+    padding: 10px;
+  }
+}
+.mailme {
+  // width: 50%;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  svg {
+    width: 35px;
+    height: 35px;
+  }
+  .texts {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+    // font-size: 13px !important;
+    p {
+      // font-size: 16px;
+      font-family: var(--subtitlefont);
+      &:first-child {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  @media (max-width: 350px) {
+    .texts {
+      p {
+        font-size: 13px;
+      }
+    }
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+.textsocial {
+  font-family: var(--ThirdFont) !important;
+  padding-left: 3px;
+  font-size: 23px !important;
+  color: var(--subcolor-babyblue);
+}
+.Socials {
+  // width: 50%;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+  p {
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      width: fit-content;
+      padding: 8px 10px;
+      svg {
+        width: 40px;
+        transition: 0.4s all linear;
+        border-radius: 6px;
+        height: 40px;
+        &:hover {
+          color: #1a1a1a;
+          background-color: var(--subcolor-babyblue);
+        }
+      }
+    }
+  }
+  @media (max-width: 350px) {
+    ul {
+      li {
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+// .mailme{
+
+// }
+
+.chat {
+  width: 35%;
+}
+@media (max-width: 991px) {
+  .containnn {
+    flex-direction: column !important;
+  }
+  .chat {
+    width: 100%;
+  }
+}
