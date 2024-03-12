@@ -11,7 +11,7 @@ import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import "./contact.css";
 function AllContact() {
   return (
-    <section className="gray">
+    <section className="graaay">
       <div className="container">
         <div className="mainhead">
           <h2>Contact</h2>

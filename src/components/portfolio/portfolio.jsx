@@ -30,7 +30,7 @@ function Portfolio() {
     setMEnuItem(newProjectItems);
   };
   return (
-    <section className="portfolio section graaay" id="work">
+    <section className="portfolio section gray" id="work">
       <div className="mainhead">
         <h2>Portfolio</h2>
       </div>

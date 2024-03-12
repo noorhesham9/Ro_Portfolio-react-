@@ -1,6 +1,3 @@
-import { useState } from "react";
-import "./App.css";
-// import Header from "./components/header/header";
 import Header from "./components/header/Navbar";
 import Landing from "./components/landing/Landing";
 import About from "./components/about/about";
@@ -9,6 +6,7 @@ import Resume from "./components/resume/resume";
 import Portfolio from "./components/portfolio/portfolio";
 import Contact from "./components/contact/contact";
 import AllContact from "./components/contact/AllContact";
+import Footer from "./components/footer/footer";
 function App() {
   return (
     <div>
@@ -19,6 +17,7 @@ function App() {
       <Resume />
       <Portfolio />
       <AllContact />
+      <Footer />
     </div>
   );
 }

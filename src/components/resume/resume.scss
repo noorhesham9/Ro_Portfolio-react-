@@ -1,4 +1,18 @@
 .resume {
+  background-image: url("./../../assets/background_resume.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
   .dowload {
     display: flex;
     justify-content: center;
@@ -151,6 +165,12 @@
 .show-content {
   max-height: 500px;
   padding-top: 15px;
+}
+@media (min-width: 766px) and (max-width: 834px) {
+  .show-content {
+    max-height: 570px !important;
+    padding-top: 15px;
+  }
 }
 
 .resume__date-title {
